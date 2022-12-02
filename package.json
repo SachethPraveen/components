@@ -1,6 +1,6 @@
 {
   "name": "@sachethpraveen/components",
-  "version": "1.0.2",
+  "version": "1.4.3",
   "description": "Made with create-react-library",
   "author": "sachethpraveen",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "release": "standard-version"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^18.2.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
