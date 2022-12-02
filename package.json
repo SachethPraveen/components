@@ -1,6 +1,6 @@
 {
   "name": "@sachethpraveen/components",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Made with create-react-library",
   "author": "sachethpraveen",
   "license": "MIT",
@@ -64,5 +64,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
 }
