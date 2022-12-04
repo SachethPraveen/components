@@ -6,6 +6,9 @@ import CardGroup from './components/CardGroup'
 import Header from './components/Header'
 import Table from './components/Table'
 import Sidebar from './components/Sidebar'
+import Footer from './components/Footer'
+import './components/Footer.css'
+import './components/Sidebar.css'
 
 interface Props {
   text: string
@@ -15,4 +18,13 @@ const ExampleComponent = ({ text }: Props) => {
   return <div className={styles.test}>Example Component: {text}</div>
 }
 
-export { Card, InputBox, ExampleComponent, CardGroup, Header, Table, Sidebar }
+export {
+  Card,
+  InputBox,
+  ExampleComponent,
+  CardGroup,
+  Header,
+  Table,
+  Sidebar,
+  Footer
+}
