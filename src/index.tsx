@@ -7,7 +7,6 @@ import Header from './components/Header'
 import Table from './components/Table'
 import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
-import './components/Footer.css'
 import './components/Sidebar.css'
 
 interface Props {
