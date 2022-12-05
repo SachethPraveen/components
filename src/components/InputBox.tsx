@@ -7,6 +7,7 @@ const InputBox = (props: {
   error: boolean
   invalid: boolean
   notFound: boolean
+  onClick: any
 }) => {
   return (
     <div className='mb-3 w-100'>
@@ -47,6 +48,11 @@ const InputBox = (props: {
             onKeyPress={props.keyPress}
             onChange={props.onChange}
           />
+
+          <div className='text-secondary mb-3' onClick={props.onClick}>
+            Change username
+          </div>
+
           {props.error && (
             <p className='text-danger'>
               Password should be atleast 8 characters!
