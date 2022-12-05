@@ -66,6 +66,7 @@
     "dist"
   ],
   "dependencies": {
-    "bootstrap": "^5.2.3"
+    "bootstrap": "^5.2.3",
+    "react-icons": "^4.7.1"
   }
 }
