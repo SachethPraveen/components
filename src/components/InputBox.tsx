@@ -11,7 +11,7 @@ const InputBox = (props: {
   return (
     <div className='mb-3 w-100'>
       {!props.isUser && (
-        <>
+        <div>
           <label htmlFor='username' className='form-label w-100'>
             Enter user name
           </label>
@@ -30,11 +30,11 @@ const InputBox = (props: {
           )}
 
           {props.notFound && <p className='text-danger'>User not Found!</p>}
-        </>
+        </div>
       )}
 
       {props.isUser && (
-        <>
+        <div>
           <label htmlFor='password' className='form-label w-100'>
             Enter Password
           </label>
@@ -54,7 +54,7 @@ const InputBox = (props: {
           )}
 
           {props.invalid && <p className='text-danger'>Invalid Password!</p>}
-        </>
+        </div>
       )}
     </div>
   )
