@@ -1,5 +1,6 @@
 import React from 'react'
 import Filter from './Filter'
+import { AiOutlineEye } from 'react-icons/ai'
 
 const Table = (props: { data?: Object[] }) => {
   return (
@@ -83,7 +84,9 @@ const Table = (props: { data?: Object[] }) => {
               <td className='text-success'>SUCCESS</td>
               <td>{new Date().toUTCString()}</td>
               <td>
-                <span className='material-symbols-outlined'>visibility</span>
+                <span className='material-symbols-outlined'>
+                  <AiOutlineEye />
+                </span>
               </td>
             </tr>
             <tr>
@@ -95,7 +98,9 @@ const Table = (props: { data?: Object[] }) => {
               <td className='text-danger'>FAIL</td>
               <td>{new Date().toUTCString()}</td>
               <td>
-                <span className='material-symbols-outlined'>visibility</span>
+                <span className='material-symbols-outlined'>
+                  <AiOutlineEye />
+                </span>
               </td>
             </tr>
             <tr>
@@ -107,7 +112,9 @@ const Table = (props: { data?: Object[] }) => {
               <td className='text-success'>SUCCESS</td>
               <td>{new Date().toUTCString()}</td>
               <td>
-                <span className='material-symbols-outlined'>visibility</span>
+                <span className='material-symbols-outlined'>
+                  <AiOutlineEye />
+                </span>
               </td>
             </tr>
             <tr>
@@ -119,7 +126,9 @@ const Table = (props: { data?: Object[] }) => {
               <td className='text-danger'>FAIL</td>
               <td>{new Date().toUTCString()}</td>
               <td>
-                <span className='material-symbols-outlined'>visibility</span>
+                <span className='material-symbols-outlined'>
+                  <AiOutlineEye />
+                </span>
               </td>
             </tr>
             <tr>
@@ -131,7 +140,9 @@ const Table = (props: { data?: Object[] }) => {
               <td className='text-success'>SUCCESS</td>
               <td>{new Date().toUTCString()}</td>
               <td>
-                <span className='material-symbols-outlined'>visibility</span>
+                <span className='material-symbols-outlined'>
+                  <AiOutlineEye />
+                </span>
               </td>
             </tr>
           </tbody>
