@@ -1,9 +1,41 @@
 import React from 'react'
 import Filter from './Filter'
 
-const Table = (props: { data?: [] }) => {
+const Table = (props: { data?: Object[] }) => {
   return (
     <div>
+      {props.data && (
+        <table>
+          <thead className='table-light'>
+            <tr>
+              {Object.keys(props.data[0]).map((head) => {
+                return <th scope='col'>{head}</th>
+              })}
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(props.data[0]).map(() => {
+              return (
+                <td>
+                  <Filter />
+                </td>
+              )
+            })}
+          </tbody>
+          <tbody>
+            {props.data.map((row) => {
+              return (
+                <tr>
+                  {Object.values(row).map((detail) => {
+                    return <td>{detail}</td>
+                  })}
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      )}
       {!props.data && (
         <table className='table'>
           <thead className='table-light'>
@@ -49,7 +81,7 @@ const Table = (props: { data?: [] }) => {
               <td>YesBank</td>
               <td>123456</td>
               <td className='text-success'>SUCCESS</td>
-              <td>{Date()}</td>
+              <td>{new Date().toUTCString()}</td>
               <td>
                 <span className='material-symbols-outlined'>visibility</span>
               </td>
@@ -61,7 +93,7 @@ const Table = (props: { data?: [] }) => {
               <td>YesBank</td>
               <td>123456</td>
               <td className='text-danger'>FAIL</td>
-              <td>{Date()}</td>
+              <td>{new Date().toUTCString()}</td>
               <td>
                 <span className='material-symbols-outlined'>visibility</span>
               </td>
@@ -73,7 +105,7 @@ const Table = (props: { data?: [] }) => {
               <td>YesBank</td>
               <td>123456</td>
               <td className='text-success'>SUCCESS</td>
-              <td>{Date()}</td>
+              <td>{new Date().toUTCString()}</td>
               <td>
                 <span className='material-symbols-outlined'>visibility</span>
               </td>
@@ -85,7 +117,7 @@ const Table = (props: { data?: [] }) => {
               <td>YesBank</td>
               <td>123456</td>
               <td className='text-danger'>FAIL</td>
-              <td>{Date()}</td>
+              <td>{new Date().toUTCString()}</td>
               <td>
                 <span className='material-symbols-outlined'>visibility</span>
               </td>
@@ -97,7 +129,7 @@ const Table = (props: { data?: [] }) => {
               <td>YesBank</td>
               <td>123456</td>
               <td className='text-success'>SUCCESS</td>
-              <td>{Date()}</td>
+              <td>{new Date().toUTCString()}</td>
               <td>
                 <span className='material-symbols-outlined'>visibility</span>
               </td>

@@ -11,15 +11,13 @@ const Sidebar = () => {
     <div
       className={mini ? 'mini sidebar' : 'sidebar'}
       onMouseOver={() => {
-        console.log('over')
         setMini((prevMini) => !prevMini)
       }}
       onMouseOut={() => {
-        console.log('out')
         setMini((prevMini) => !prevMini)
       }}
     >
-      <a href='#'>
+      <a href='/'>
         <span className='material-symbols-outlined'>
           <BiHomeAlt />
         </span>
@@ -27,10 +25,10 @@ const Sidebar = () => {
       </a>
       <br />
 
-      <a href='#'>
+      <a href='/transactions'>
         <span className='material-symbols-outlined'>
           <CiMoneyBill />
-        </span>{' '}
+        </span>
         <span className='icon-text'>Transactions</span>
       </a>
       <br />
@@ -38,7 +36,7 @@ const Sidebar = () => {
       <a href='#'>
         <span className='material-symbols-outlined'>
           <GiSwipeCard />
-        </span>{' '}
+        </span>
         <span className='icon-text'>Cards</span>
       </a>
       <br />
@@ -46,7 +44,7 @@ const Sidebar = () => {
       <a href='#'>
         <span className='material-symbols-outlined'>
           <IoCardOutline />
-        </span>{' '}
+        </span>
         <span className='icon-text'>Users</span>
       </a>
     </div>
