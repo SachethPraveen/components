@@ -3,10 +3,12 @@ import styles from './styles.module.css'
 import Card from './components/Card'
 import InputBox from './components/InputBox'
 import CardGroup from './components/CardGroup'
+import CardGroupTwo from './components/CardGroupTwo'
 import Header from './components/Header'
 import Table from './components/Table'
 import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
+import Pagination from './components/Pagination'
 import './components/Sidebar.css'
 
 interface Props {
@@ -25,5 +27,7 @@ export {
   Header,
   Table,
   Sidebar,
-  Footer
+  Footer,
+  Pagination,
+  CardGroupTwo
 }

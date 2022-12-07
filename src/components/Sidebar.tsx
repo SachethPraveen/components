@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import './Sidebar.css'
-import { BiHomeAlt } from 'react-icons/bi'
-import { CiMoneyBill } from 'react-icons/ci'
+import { BiHomeAlt, BiMoney } from 'react-icons/bi'
 import { GiSwipeCard } from 'react-icons/gi'
 import { IoCardOutline } from 'react-icons/io5'
 
@@ -27,7 +26,7 @@ const Sidebar = () => {
 
       <a href='/transactions'>
         <span className='material-symbols-outlined'>
-          <CiMoneyBill />
+          <BiMoney />
         </span>
         <span className='icon-text'>Transactions</span>
       </a>
