@@ -17,7 +17,7 @@ const CardGroup = () => {
           <Card name='Requested Approval' number={12} logo='forward_to_inbox' />
         </div>
         <div className='col'>
-          <Card name='Total Cards' number={1} logo='credit-card' />
+          <Card name='Total Cards' number={1} logo='credit_card' />
         </div>
         <div className='col'>
           <Card name='Total Bins' number={2} logo='account_balance_wallet' />
