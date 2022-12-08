@@ -2,11 +2,11 @@ import React from 'react'
 import Filter from './Filter'
 import { AiOutlineEye } from 'react-icons/ai'
 
-const Table = (props: { data?: Object[] }) => {
+const Table = (props: { data?: Object[]; filterPress?: any }) => {
   return (
     <div>
       {props.data && (
-        <table>
+        <table className='table w-100'>
           <thead className='table-light'>
             <tr>
               {Object.keys(props.data[0]).map((head) => {
@@ -19,7 +19,7 @@ const Table = (props: { data?: Object[] }) => {
             {Object.keys(props.data[0]).map(() => {
               return (
                 <td>
-                  <Filter />
+                  <Filter filterPress={props.filterPress} />
                 </td>
               )
             })}
@@ -37,6 +37,7 @@ const Table = (props: { data?: Object[] }) => {
           </tbody>
         </table>
       )}
+
       {!props.data && (
         <table className='table'>
           <thead className='table-light'>
@@ -53,25 +54,25 @@ const Table = (props: { data?: Object[] }) => {
           </thead>
           <tbody>
             <td>
-              <Filter />
+              <Filter filterPress={props.filterPress} />
             </td>
             <td>
-              <Filter />
+              <Filter filterPress={props.filterPress} />
             </td>
             <td>
-              <Filter />
+              <Filter filterPress={props.filterPress} />
             </td>
             <td>
-              <Filter />
+              <Filter filterPress={props.filterPress} />
             </td>
             <td>
-              <Filter />
+              <Filter filterPress={props.filterPress} />
             </td>
             <td>
-              <Filter />
+              <Filter filterPress={props.filterPress} />
             </td>
             <td>
-              <Filter />
+              <Filter filterPress={props.filterPress} />
             </td>
           </tbody>
           <tbody>

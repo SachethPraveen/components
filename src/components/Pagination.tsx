@@ -4,7 +4,7 @@ import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5'
 const Pagination = (props: { length?: number }) => {
   return (
     <div className='d-flex justify-content-between mt-2'>
-      <div className='ms-2'>
+      <div>
         Showing Results {props.length ? props.length : '5'} of{' '}
         {props.length ? props.length : '5'}
       </div>
