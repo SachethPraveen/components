@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card = (props: { name?: string; number?: number }) => {
+const Card = (props: { name?: string; number?: number; logo?: string }) => {
   return (
     <div className='card d-flex flex-row align-items-center w-100 mt-3'>
       <div className='p-2 m-1 w-100 text-start'>
@@ -9,7 +9,14 @@ const Card = (props: { name?: string; number?: number }) => {
           <h1>{props.number ? props.number : 0}</h1>
         </div>
       </div>
-      <div className='p-2 m-1'>Logo</div>
+
+      <div className='p-2 m-1'>
+        {props.logo ? (
+          <span className='material-symbols-outlined'>{props.logo}</span>
+        ) : (
+          'Logo'
+        )}
+      </div>
     </div>
   )
 }

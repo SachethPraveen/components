@@ -32,7 +32,7 @@ const Sidebar = (props: { id?: number }) => {
       </a>
       <br />
 
-      <a href='#'>
+      <a href='/cards'>
         <span className='material-symbols-outlined'>
           <GiSwipeCard />
         </span>
