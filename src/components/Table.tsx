@@ -16,10 +16,10 @@ const Table = (props: { data?: Object[]; filterPress?: any }) => {
             </tr>
           </thead>
           <tbody>
-            {Object.keys(props.data[0]).map(() => {
+            {Object.keys(props.data[0]).map((key) => {
               return (
                 <td>
-                  <Filter filterPress={props.filterPress} />
+                  <Filter filterPress={props.filterPress} head={key} />
                 </td>
               )
             })}
