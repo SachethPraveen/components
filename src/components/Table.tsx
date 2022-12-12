@@ -10,7 +10,7 @@ const Table = (props: {
 }) => {
   return (
     <div>
-      <Pagination />
+      <Pagination length={props.data?.length} />
       <div>
         {props.data && (
           <table className='table w-100'>
