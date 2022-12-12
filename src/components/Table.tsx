@@ -7,6 +7,7 @@ const Table = (props: {
   data?: Object[]
   filterPress: Function
   generateKey: () => string
+  noFilter?: boolean
 }) => {
   return (
     <div>
@@ -38,19 +39,24 @@ const Table = (props: {
               </tr>
             </tbody>
             <tbody>
-              {props.data.map((row) => {
-                return (
-                  <tr key={props.generateKey()}>
-                    {Object.values(row).map((detail) => {
-                      return <td key={props.generateKey()}>{detail}</td>
-                    })}
-                  </tr>
-                )
-              })}
+              {!props.noFilter &&
+                props.data.map((row) => {
+                  return (
+                    <tr key={props.generateKey()}>
+                      {Object.values(row).map((detail) => {
+                        return <td key={props.generateKey()}>{detail}</td>
+                      })}
+                    </tr>
+                  )
+                })}
             </tbody>
           </table>
         )}
-
+        {props.noFilter && (
+          <div className='w-100 d-flex justify-content-center fs-2'>
+            Sorry, No Results Found!
+          </div>
+        )}
         {!props.data && (
           <table className='table'>
             <thead className='table-light'>
