@@ -1,4 +1,3 @@
-import * as React from 'react'
 import Card from './components/Card'
 import InputBox from './components/InputBox'
 import CardGroup from './components/CardGroup'
