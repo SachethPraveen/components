@@ -1,59 +1,41 @@
-import React from 'react'
-import Filter from './Filter'
-import Pagination from './Pagination'
+import React, { useMemo } from 'react'
+import { useTable, useFilters } from 'react-table'
 
-const NewTable = (props: {
-  data: Object[]
-  filterPress: Function
-  generateKey: () => string
-  noFilter?: boolean
-}) => {
+const NewTable = (props: { receivedData: any; receivedColumns: any }) => {
+  const columns = useMemo(() => props.receivedColumns, [])
+  const data = useMemo(() => props.receivedData, [])
+  const tableInstance = useTable({ columns, data }, useFilters)
+  const { getTableProps, getTableBodyProps, rows, headerGroups, prepareRow } =
+    tableInstance
+
   return (
-    <div>
-      <Pagination length={props.data.length} />
-      <table className='table'>
-        <thead className='table-light'>
-          <tr>
-            {Object.keys(props.data[0]).map((key) => {
-              return <th key={props.generateKey()}>{key}</th>
-            })}
-            <th></th>
+    <table className='table mt-3' {...getTableProps()}>
+      <thead className='table-light'>
+        {headerGroups.map((headerGroup) => (
+          <tr {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map((column) => (
+              <th {...column.getHeaderProps()}>
+                {column.render('Header')}
+                {/* @ts-expect-error canFilter is not in type def */}
+                <div>{column.canFilter ? column.render('Filter') : null}</div>
+              </th>
+            ))}
           </tr>
-        </thead>
-        <tbody>
-          <tr>
-            {Object.keys(props.data[0]).map((key) => {
-              return (
-                <td key={props.generateKey()}>
-                  <Filter head={key} filterPress={props.filterPress} />
-                </td>
-              )
-            })}
-            <td></td>
-          </tr>
-          {!props.noFilter &&
-            props.data.map((product) => {
-              return (
-                <tr key={props.generateKey()}>
-                  {Object.values(product).map((value) => {
-                    return <td key={props.generateKey()}>{value}</td>
-                  })}
-                  <td>
-                    <span className='material-symbols-outlined'>
-                      visibility
-                    </span>
-                  </td>
-                </tr>
-              )
-            })}
-        </tbody>
-      </table>
-      {props.noFilter && (
-        <div className='w-100 d-flex justify-content-center fs-2'>
-          Sorry, No Results Found!
-        </div>
-      )}
-    </div>
+        ))}
+      </thead>
+      <tbody {...getTableBodyProps()}>
+        {rows.map((row) => {
+          prepareRow(row)
+          return (
+            <tr {...row.getRowProps()}>
+              {row.cells.map((cell) => (
+                <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+              ))}
+            </tr>
+          )
+        })}
+      </tbody>
+    </table>
   )
 }
 
