@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { IoFilterOutline } from 'react-icons/io5'
 
 const Filter = (props: { head?: string; filterPress?: any }) => {
@@ -17,4 +17,4 @@ const Filter = (props: { head?: string; filterPress?: any }) => {
   )
 }
 
-export default Filter
+export default memo(Filter)
