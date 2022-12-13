@@ -8,6 +8,7 @@ import Sidebar from './components/Sidebar'
 import Footer from './components/Footer'
 import Pagination from './components/Pagination'
 import NewTable from './components/NewTable'
+import NewFilter from './components/NewFilter'
 import './components/Sidebar.css'
 
 export {
@@ -20,5 +21,6 @@ export {
   Footer,
   Pagination,
   CardGroupTwo,
-  NewTable
+  NewTable,
+  NewFilter
 }
