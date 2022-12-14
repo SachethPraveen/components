@@ -19,11 +19,13 @@ const Header = (props: { name?: string }) => {
           </div>
           <div>{props.name ? props.name : 'User'}</div>
         </button>
-        <ul className='dropdown-menu'>
+        <ul className='headerDrop dropdown-menu'>
           <li>
             <a className='dropdown-item' href='/'>
               Logout
-              <span className='material-symbols-outlined'>power_rounded</span>
+              <span className='material-symbols-outlined align-middle ms-2'>
+                power_rounded
+              </span>
             </a>
           </li>
         </ul>
