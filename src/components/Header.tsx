@@ -21,18 +21,9 @@ const Header = (props: { name?: string }) => {
         </button>
         <ul className='dropdown-menu'>
           <li>
-            <a className='dropdown-item' href='#'>
-              Action
-            </a>
-          </li>
-          <li>
-            <a className='dropdown-item' href='#'>
-              Another action
-            </a>
-          </li>
-          <li>
-            <a className='dropdown-item' href='#'>
-              Something else here
+            <a className='dropdown-item' href='/'>
+              Logout
+              <span className='material-symbols-outlined'>power_rounded</span>
             </a>
           </li>
         </ul>

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { memo, useMemo } from 'react'
 import { useTable, useFilters } from 'react-table'
 
 const NewTable = (props: { receivedData: any; receivedColumns: any }) => {
@@ -39,4 +39,4 @@ const NewTable = (props: { receivedData: any; receivedColumns: any }) => {
   )
 }
 
-export default NewTable
+export default memo(NewTable)
