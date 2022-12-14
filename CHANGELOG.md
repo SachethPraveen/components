@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.34](https://github.com/sachethpraveen/components/compare/v1.4.33...v1.4.34) (2022-12-14)
+
 ### [1.4.33](https://github.com/sachethpraveen/components/compare/v1.4.32...v1.4.33) (2022-12-13)
 
 ### [1.4.32](https://github.com/sachethpraveen/components/compare/v1.4.31...v1.4.32) (2022-12-13)
