@@ -16,7 +16,7 @@ const Sidebar = () => {
         setMini((prevMini) => !prevMini)
       }}
     >
-      <a href={`/${window.localStorage.getItem('userId')}`}>
+      <a href={`/${localStorage.getItem('userId')}`}>
         <span className='material-symbols-outlined'>
           <BiHomeAlt />
         </span>
