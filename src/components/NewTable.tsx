@@ -3,7 +3,7 @@ import { useTable, useFilters } from 'react-table'
 
 const NewTable = (props: { receivedData: any; receivedColumns: any }) => {
   const columns = useMemo(() => props.receivedColumns, [])
-  const data = useMemo(() => props.receivedData, [])
+  const data = props.receivedData
   const tableInstance = useTable({ columns, data }, useFilters)
   const { getTableProps, getTableBodyProps, rows, headerGroups, prepareRow } =
     tableInstance
