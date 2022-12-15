@@ -4,7 +4,7 @@ import { BiHomeAlt, BiMoney } from 'react-icons/bi'
 import { GiSwipeCard } from 'react-icons/gi'
 import { IoCardOutline } from 'react-icons/io5'
 
-const Sidebar = (props: { id?: number }) => {
+const Sidebar = () => {
   const [mini, setMini] = useState(true)
   return (
     <div
@@ -16,7 +16,7 @@ const Sidebar = (props: { id?: number }) => {
         setMini((prevMini) => !prevMini)
       }}
     >
-      <a href={`/${props.id}`}>
+      <a href={`/${window.localStorage.getItem('userId')}`}>
         <span className='material-symbols-outlined'>
           <BiHomeAlt />
         </span>
