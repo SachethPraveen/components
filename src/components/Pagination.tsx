@@ -1,52 +1,52 @@
 import React from 'react'
-import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5'
 
-const Pagination = (props: { length?: number }) => {
+const Pagination = (props: {
+  length?: number
+  pages: number[]
+  previous: any
+  next: any
+  canPrevious: boolean
+  canNext: boolean
+  index: number
+}) => {
   return (
     <div className='d-flex justify-content-between mt-2'>
       <div>
-        Showing Results {props.length ? props.length : '5'} of{' '}
+        Showing Results{' '}
+        {props.length ? (props.length < 10 ? props.length : '10') : '5'} of{' '}
         {props.length ? props.length : '5'}
       </div>
       <nav className='me-2' aria-label='...'>
         <ul className='pagination pagination-sm '>
-          <li className='page-item disabled'>
-            <span className='page-link h-100 border-0 d-flex align-items-center justify-content-center'>
-              <span className='material-symbols-outlined fs-6 '>
-                <IoChevronBackOutline />
-              </span>
-            </span>
-          </li>
-
-          <li className='page-item active'>
-            <span className='page-link h-100 border-0 rounded-circle text-dark bg-light'>
-              1
-            </span>
-          </li>
-
-          <li className='page-item border-0' aria-current='page'>
-            <span className='page-link h-100 border-0 rounded-circle text-dark'>
-              2
-            </span>
-          </li>
           <li className='page-item'>
-            <a
-              className='page-link h-100 border-0 rounded-circle text-dark'
-              href='#'
-            >
-              3
-            </a>
-          </li>
-
-          <li className='page-item'>
-            <a
-              className='page-link h-100 border-0 d-flex align-items-center justify-content-center'
-              href='#'
+            <button
+              className='btn h-100 border-0 rounded-circle d-flex align-items-center justify-content-center'
+              onClick={props.previous}
+              disabled={!props.canPrevious}
             >
               <span className='material-symbols-outlined fs-6 text-dark'>
-                <IoChevronForwardOutline />
+                arrow_back_ios
               </span>
-            </a>
+            </button>
+          </li>
+          <li className='page-item m-2'>
+            <div>
+              Page{' '}
+              <strong>
+                {props.index + 1} of {props.pages.length}
+              </strong>
+            </div>
+          </li>
+          <li className='page-item'>
+            <button
+              className='btn h-100 border-0 rounded-circle d-flex align-items-center justify-content-center'
+              onClick={props.next}
+              disabled={!props.canNext}
+            >
+              <span className='material-symbols-outlined fs-6 text-dark '>
+                arrow_forward_ios
+              </span>
+            </button>
           </li>
         </ul>
       </nav>

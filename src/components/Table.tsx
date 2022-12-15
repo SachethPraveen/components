@@ -1,7 +1,7 @@
 import React from 'react'
 import Filter from './Filter'
 import { AiOutlineEye } from 'react-icons/ai'
-import Pagination from './Pagination'
+// import Pagination from './Pagination'
 
 const Table = (props: {
   data?: Object[]
@@ -11,7 +11,7 @@ const Table = (props: {
 }) => {
   return (
     <div>
-      <Pagination length={props.data?.length} />
+      {/* <Pagination length={props.data?.length} /> */}
       <div>
         {props.data && (
           <table className='table w-100'>
