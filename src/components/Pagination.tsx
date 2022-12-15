@@ -10,7 +10,7 @@ const Pagination = (props: {
   index: number
 }) => {
   return (
-    <div className='d-flex justify-content-between mt-2'>
+    <div className='d-flex justify-content-between align-items-center mt-2'>
       <div>
         Showing Results{' '}
         {props.length ? (props.length < 10 ? props.length : '10') : '5'} of{' '}
