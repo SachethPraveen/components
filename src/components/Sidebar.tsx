@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Sidebar.css'
 import { BiHomeAlt, BiMoney } from 'react-icons/bi'
 import { GiSwipeCard } from 'react-icons/gi'
@@ -6,6 +6,10 @@ import { IoCardOutline } from 'react-icons/io5'
 
 const Sidebar = () => {
   const [mini, setMini] = useState(true)
+  const [userId, setId] = useState<string | null>()
+  useEffect(() => {
+    setId(localStorage.getItem('userId'))
+  })
   return (
     <div
       className={mini ? 'mini sidebar' : 'sidebar'}
@@ -16,12 +20,14 @@ const Sidebar = () => {
         setMini((prevMini) => !prevMini)
       }}
     >
-      <a href={`/overview/${localStorage.getItem('userId')}`}>
-        <span className='material-symbols-outlined'>
-          <BiHomeAlt />
-        </span>
-        <span className='icon-text'>Home</span>
-      </a>
+      {userId && (
+        <a href={`/overview/${userId}`}>
+          <span className='material-symbols-outlined'>
+            <BiHomeAlt />
+          </span>
+          <span className='icon-text'>Home</span>
+        </a>
+      )}
       <br />
 
       <a href='/transactions'>
