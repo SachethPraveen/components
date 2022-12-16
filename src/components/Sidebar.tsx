@@ -4,7 +4,7 @@ import { BiHomeAlt, BiMoney } from 'react-icons/bi'
 import { GiSwipeCard } from 'react-icons/gi'
 import { IoCardOutline } from 'react-icons/io5'
 
-const Sidebar = (props: { sideClick: () => void }) => {
+const Sidebar = (props: { sideClick: (event: any) => void }) => {
   const [mini, setMini] = useState(true)
 
   return (
@@ -17,37 +17,37 @@ const Sidebar = (props: { sideClick: () => void }) => {
         setMini((prevMini) => !prevMini)
       }}
     >
-      <a id='overview' onClick={props.sideClick}>
+      <span id='overview' onClick={props.sideClick} className='sideOption'>
         <span className='material-symbols-outlined'>
           <BiHomeAlt />
         </span>
         <span className='icon-text'>Home</span>
-      </a>
+      </span>
 
       <br />
 
-      <a id='transactions' onClick={props.sideClick}>
+      <span id='transactions' onClick={props.sideClick} className='sideOption'>
         <span className='material-symbols-outlined'>
           <BiMoney />
         </span>
         <span className='icon-text'>Transactions</span>
-      </a>
+      </span>
       <br />
 
-      <a id='cards' onClick={props.sideClick}>
+      <span id='cards' onClick={props.sideClick} className='sideOption'>
         <span className='material-symbols-outlined'>
           <GiSwipeCard />
         </span>
         <span className='icon-text'>Cards</span>
-      </a>
+      </span>
       <br />
 
-      <a id='bins' onClick={props.sideClick}>
+      <span id='bins' onClick={props.sideClick} className='sideOption'>
         <span className='material-symbols-outlined'>
           <IoCardOutline />
         </span>
         <span className='icon-text'>Bins</span>
-      </a>
+      </span>
     </div>
   )
 }
