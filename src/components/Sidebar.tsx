@@ -4,7 +4,7 @@ import { BiHomeAlt, BiMoney } from 'react-icons/bi'
 import { GiSwipeCard } from 'react-icons/gi'
 import { IoCardOutline } from 'react-icons/io5'
 
-const Sidebar = () => {
+const Sidebar = (props: { sideClick: () => void }) => {
   const [mini, setMini] = useState(true)
 
   return (
@@ -17,7 +17,7 @@ const Sidebar = () => {
         setMini((prevMini) => !prevMini)
       }}
     >
-      <a href={`/overview`}>
+      <a id='overview' onClick={props.sideClick}>
         <span className='material-symbols-outlined'>
           <BiHomeAlt />
         </span>
@@ -26,7 +26,7 @@ const Sidebar = () => {
 
       <br />
 
-      <a href='/transactions'>
+      <a id='transactions' onClick={props.sideClick}>
         <span className='material-symbols-outlined'>
           <BiMoney />
         </span>
@@ -34,7 +34,7 @@ const Sidebar = () => {
       </a>
       <br />
 
-      <a href='/cards'>
+      <a id='cards' onClick={props.sideClick}>
         <span className='material-symbols-outlined'>
           <GiSwipeCard />
         </span>
@@ -42,7 +42,7 @@ const Sidebar = () => {
       </a>
       <br />
 
-      <a href='/bins'>
+      <a id='bins' onClick={props.sideClick}>
         <span className='material-symbols-outlined'>
           <IoCardOutline />
         </span>
